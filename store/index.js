@@ -11,12 +11,12 @@ export const state = () => ({
         console.log('[nuxtServerInit]');
         try {
           return await dispatch('manager/loadData').then((result) => {
-              console.log(result);
+              // console.log(result);
           }).catch(() => {
           });
         } catch (err) {
             // alert(err);
-            console.log('err', err);
+            // console.log('err', err); 
         }
     },
   };

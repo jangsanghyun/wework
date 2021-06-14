@@ -70,13 +70,13 @@ html {
 .body {
   margin: 0 auto;
   max-width: 1500px;
-  background-color: rgba(0, 128, 0, 0.271);
+  /* background-color: rgba(0, 128, 0, 0.271); */
 }
 
 
 @media (max-width: 1200px) {
     .body {
-      max-width: 1200px;
+      min-width: 1200px;
     }
 }
 
