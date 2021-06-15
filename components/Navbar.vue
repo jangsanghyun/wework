@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar">
+    <div class="navbar" :class="[device]">
         <b-navbar-brand href="/">
             <img :src="logoUrl"/>
         </b-navbar-brand>
@@ -30,6 +30,9 @@
 </template>
 
 <script>
+
+import { mapState, mapGetters, mapMutations } from 'vuex';  
+
 export default {
   methods: {
       onHamburgerToggle() {
@@ -45,9 +48,10 @@ export default {
     }
   },
   computed: {
-      togglerIcon() {
-          return ``
-      }
+    ...mapState(['device']),
+    togglerIcon() {
+        return ``
+    }
   }
 }
 </script>

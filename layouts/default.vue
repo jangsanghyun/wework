@@ -8,7 +8,25 @@
 </template>
 <script>
 
+import { mapState, mapGetters, mapMutations } from 'vuex';  
+
 export default {
+  methods: {
+     ...mapMutations({
+       setDevice: 'SET_DEVICE',
+    }),
+  },
+  mounted() {
+    console.log("Created wecake");
+    const filter = "win16|win32|win64|macintel|mac|"; // PC일 경우 가능한 값
+    if(navigator.platform) {
+        if(filter.indexOf(navigator.platform.toLowerCase()) < 0 ) {
+              this.setDevice('mobile');
+        } else {
+              this.setDevice('pc');
+        }
+    }
+  },
 }
 </script>
 <style>
